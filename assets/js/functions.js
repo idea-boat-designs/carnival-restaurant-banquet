@@ -408,40 +408,6 @@
         });
     });
 
-    // Gallery Slider
-    $(document).ready(function () {
-        let slideIndex = 0;
-        const $slides = $(".gallery-slides"),
-            $totalSlides = $(".gallery-slide").length;
-
-        function moveSlide(step) {
-            slideIndex = (slideIndex + step + $totalSlides) % $totalSlides;
-            updateSlide();
-        }
-
-        function updateSlide() {
-            $slides.css("transform", `translateX(${-slideIndex * 100}%)`);
-        }
-
-        $(".prev").on("click", function (e) {
-            moveSlide(-1);
-            e.stopPropagation();
-        });
-
-        $(".next").on("click", function (e) {
-            moveSlide(1);
-            e.stopPropagation();
-        });
-
-        // Auto Slide Every 3 Seconds
-        setInterval(() => moveSlide(1), 3000);
-
-        // Open full image in new tab on click
-        $(".gallery-slide img").on("click", function () {
-            window.open($(this).attr("src"), "_blank");
-        });
-    });
-
     /* ------------------ SHOP FLITER ------------------ */
 
     var $shopFilter = $(".shop-filter"),
@@ -757,6 +723,17 @@
                 error: $('.thanks').show()
             });
             return false;
+        }
+    });
+
+    /* ------------------  PHONE NUMBER CHECK  ------------------ */
+
+    document.getElementById("phone").addEventListener("input", function (e) {
+        if (/[^0-9]/.test(this.value)) {
+            this.title = 'Please enter digits only!';
+        }
+        else {
+            this.title = 'Phone number must be 10 digits!';
         }
     });
 

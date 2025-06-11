@@ -5,15 +5,14 @@ jQuery(document).ready(function() {
         sliderType: "standard",
         jsFileLocation: "../assets/revolution/js/",
         sliderLayout: "auto",
-        delay: 99000,/* sets the Slider's default timeline */
+        delay: 7000,/* sets the Slider's default timeline */
         disableProgressBar: "on",
         spinner: "spinner0",/* PRELOADER OPTION "0" */ 
-        /* basic navigation arrows and bullets */
         navigation: {
             keyboardNavigation: "off",
             keyboard_direction: "horizontal",
             mouseScrollNavigation: "off",
-            onHoverStop: "on",
+            onHoverStop: "off",
             bullets: {
                 style: 'uranus',
                 enable: true,
@@ -54,5 +53,60 @@ jQuery(document).ready(function() {
 		gridwidth:[1240, 1024, 778, 320],
         gridheight: [700, 768, 600, 600],
 
+    });
+    jQuery("#gallery-slider1").show().revolution({
+        sliderType: "standard",
+        sliderLayout: "auto",
+        disableProgressBar: "on",
+        delay: 3000,
+        navigation: {
+            onHoverStop: "off",
+            arrows: {
+                style: "",
+                enable: true,
+                left: {
+                    h_align: "left",
+                    v_align: "center",
+                    h_offset: -2,
+                    v_offset: 0
+                },
+                right: {
+                    h_align: "right",
+                    v_align: "center",
+                    h_offset: -2,
+                    v_offset: 0
+                }
+            }
+        },
+        gridwidth: 600,
+        gridheight: 400
+    });
+
+    jQuery("#gallery-slider2").show().revolution({
+        sliderType: "standard",
+        sliderLayout: "auto",
+        disableProgressBar: "on",
+        delay: 3000,
+        navigation: {
+            onHoverStop: "off",
+            arrows: {
+                style: "",
+                enable: true,
+                left: {
+                    h_align: "left",
+                    v_align: "center",
+                    h_offset: -2,
+                    v_offset: 0
+                },
+                right: {
+                    h_align: "right",
+                    v_align: "center",
+                    h_offset: -2,
+                    v_offset: 0
+                }
+            }
+        },
+        gridwidth: 600,
+        gridheight: 400
     });
 });
